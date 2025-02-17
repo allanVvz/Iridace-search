@@ -2,46 +2,47 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #7c89d3;
+  padding: 20px;
+  box-sizing: border-box;
 }
-.container{
-  width: 80%;
+
+.container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 50px;
+  align-items: center;
+  width: 80%;
 }
-svg{
-  width: 30%;
+
+
+svg {
+  width: 100%;
+  max-width: 700px;
+  margin-right: 100px;
 }
-.norte {
-  fill: #63ab3f;
-}
-.nordeste {
-  fill: #f0b541;
-}
-.centro-oeste {
-  fill: #ffae70;
-}
-.sudeste {
-  fill: #4fa4b8;
-}
-.sul {
-  fill: #686f99;
-}
+
+.norte { fill: #63ab3f; }
+.nordeste { fill: #f0b541; }
+.centro-oeste { fill: #ffae70; }
+.sudeste { fill: #4fa4b8; }
+.sul { fill: #686f99; }
+
 path {
   fill: #1da1f2;
   stroke: white;
   stroke-width: 1px;
 }
+
 path:hover {
   fill: purple;
   stroke: red;
   stroke-width: 3px;
   transition: fill 0.4s;
 }
+
 .tooltip {
   pointer-events: none;
   position: absolute;
@@ -52,15 +53,16 @@ path:hover {
   z-index: 5;
   height: 30px;
   line-height: 30px;
-  margin: 0 auto;
   color: #21669e;
   border-radius: 5px;
   transform: translateX(-50%);
   display: none;
 }
+
 .tooltip.active {
   display: block;
 }
+
 .tooltip:after {
   content: "";
   position: absolute;
@@ -73,49 +75,64 @@ path:hover {
   border-right: 10px solid transparent;
   border-top: 10px solid white;
 }
-#resultado {
-  margin-top: 20px;
-  padding: 15px;
-  background: #fff;
-  border: 1px solid #ddd;
+
+.container-info {
+  margin-top: 100px;
+  display: felx ;
+  background: #f9f9f9;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
   border-radius: 8px;
-  display: inline-block;
-  text-align: left;
-  max-width: 600px;
+  padding: 20px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+  max-height: 400px; /* Define um limite máximo de altura */
+
+}
+/* Grid para os Cards */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Define o espaçamento entre os cards */
+    background: white;
+    border-radius: 10px;
+
+    }
+
+.card {
+  width: 33%;
+  background: white;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  text-align: center;
 }
 
-.json-container {
-  background: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  text-align: left;
+.card:hover {
+  transform: scale(1.05);
 }
-.json-container p {
-  font-size: 16px;
-  color: #333;
-  margin: 5px 0;
-}
-.json-container ul {
-  padding-left: 20px;
-}
-.json-container a {
-  color: #007BFF;
-  text-decoration: none;
-}
-.json-container a:hover {
-  text-decoration: underline;
-}
-.imagem {
-  width: 100px;
+
+/* Ajuste da Imagem nos Cards */
+.card img {
+  width: 100%;
   height: auto;
-  margin-top: 10px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
 }
-.erro {
-  color: red;
-  font-weight: bold;
+
+/* Responsividade: 1 Card por linha em telas pequenas */
+@media (max-width: 600px) {
+  .card {
+      width: 100%;
+      max-width: 100%; /* A imagem nunca será maior que o container */
+      max-height: 300px; /* Define um limite de altura */
+      object-fit: contain; /* Mantém a proporção da imagem */
+      border-radius: 15px; /* Adiciona bordas arredondadas */
+  }
 }
