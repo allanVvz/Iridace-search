@@ -1,20 +1,188 @@
-body {
-  width: 100vw;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  background-color: #7c89d3;
-}
-
-
+/* Barra lateral dentro da header */
 .header {
-  display: block;
+  display: flex;
+  flex-direction: column; /* Organiza os elementos horizontalmente */
   align-items: center;
   padding: 20px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  margin: auto; /* Centraliza no meio da página */
 }
+
+/* Conteúdo principal dentro da header */
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Imagem dentro da header */
+.header img {
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilização do título principal */
+.header h1 {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 70px;
+  color: #814256;
+  margin: 0;
+  letter-spacing: -4px;
+  margin-bottom: -5px;
+}
+
+/* Estilização do subtítulo */
+.header h2 {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #814256;
+  margin: 5px 0 0;
+  letter-spacing: 6px;
+  margin-top: -3px;
+}
+
+/* Importando a fonte Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+/* Sidebar fixa à direita */
+.sidebar {
+  width: 250px; /* Largura padrão em telas grandes */
+  height: 100vh; /* Ocupa toda a altura da tela */
+  background: #814256;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  border-radius: 2px 0 0 2px; /* Arredonda apenas o lado esquerdo */
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease-in-out; /* Suaviza a mudança de tamanho */
+}
+
+/* Ajuste para telas médias-grandes */
+@media (min-width: 1200px) {
+  .sidebar {
+    width: 300px; /* Aumenta a largura em desktops grandes */
+  }
+}
+
+/* Ajuste para telas muito grandes */
+@media (min-width: 1600px) {
+  .sidebar {
+    width: 500px; /* Aumenta ainda mais em telas ultra-wide */
+  }
+}
+
+/* Ajuste para telas extremamente grandes */
+@media (min-width: 1900px) {
+  .sidebar {
+    width: 700px; /* Sidebar substancialmente maior */
+  }
+}
+
+/* Ajuste para tablets */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px; /* Reduz a largura em tablets */
+  }
+}
+
+/* Ajuste para celulares médios */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 150px; /* Reduz ainda mais em dispositivos menores */
+    padding: 15px; /* Ajusta o espaçamento */
+    width: 80px; /* Aumenta ainda mais em telas ultra-wide */
+
+  }
+
+  .sidebar a {
+    font-size: 13px; /* Diminui o tamanho da fonte dos links */
+    padding: 8px;
+  }
+}
+
+/* Ajuste para celulares muito pequenos */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 120px; /* Sidebar bem estreita para telas muito pequenas */
+    padding: 10px;
+  }
+
+  .sidebar a {
+    font-size: 10px; /* Diminui ainda mais os links */
+    padding: 3px;
+  }
+  .sidebar p {
+    font-size: 1px; 
+  }
+}
+
+/* Estilização dos links dentro da sidebar */
+.sidebar a {
+  font-family: "League Spartan", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  width: 120%;
+  text-align: center;
+  letter-spacing: 2px; /* Espaçamento entre as letras */
+  margin-top: 5px;
+  margin-bottom: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar p {
+  font-size: 12px; /* Diminui ainda mais os links */
+  padding: 6px;
+  color: white;
+}
+
+
+/* Efeito hover */
+.sidebar a:hover {
+  background: white;
+  color: #814256;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Importando a fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;700&display=swap');
+
+
+.distribuicao {
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  color: #814256;
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Escolha entre 300, 400, 700, etc. */
+  font-style: normal;
+}
+
 
 .container {
   justify-content: center;
@@ -28,21 +196,21 @@ svg {
   margin-right: 100px;
 }
 
-.norte { fill: #63ab3f; }
-.nordeste { fill: #f0b541; }
-.centro-oeste { fill: #ffae70; }
-.sudeste { fill: #4fa4b8; }
-.sul { fill: #686f99; }
+.norte { fill: #814256; }
+.nordeste { fill: #814256; }
+.centro-oeste { fill: #814256; }
+.sudeste { fill: #814256; }
+.sul { fill: #814256; }
 
 path {
-  fill: #1da1f2;
+  fill: #814256;
   stroke: white;
   stroke-width: 1px;
 }
 
 path:hover {
-  fill: purple;
-  stroke: red;
+  fill: #716f35;
+  stroke: #a66940;
   stroke-width: 3px;
   transition: fill 0.4s;
 }
