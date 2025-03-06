@@ -88,12 +88,23 @@ document.addEventListener("DOMContentLoaded", function () {
                             }
                         });
 
+                        const especiesIgnoradas = [
+                            "Babiana fragrans",
+                            "Chasmanthe aethiopica",
+                            "Orthrosanthus chimboracensis"
+                          ];
+
                         const especiesLista = Object.values(especiesDict);
                         // Exibe as espécies no HTML
+
+                        const especiesListaFiltrada = especiesLista.filter(especie => 
+                            !especiesIgnoradas.includes(`${especie.genero} ${especie.especie}`)
+                          );
+                          
                         resultadoDiv.innerHTML = `
                             <h3>Espécies encontradas no estado: ${nomeEstado}</h3>
                             <div class="grid-container">
-                                ${especiesLista.map(especie => `
+                                 ${especiesListaFiltrada.map(especie => `
                                     <div class="card">
                                         <img src="${especie.foto}" alt="${especie.especie}">
                                         <p><strong>${especie.especie}</strong></p>
