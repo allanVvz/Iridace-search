@@ -1,7 +1,9 @@
 /* Barra lateral dentro da header */
 .header {
-  display: flex;
+  display: grid; /* Organiza os elementos horizontalmente */
   flex-direction: column; /* Organiza os elementos horizontalmente */
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   align-items: center;
   padding: 20px;
   width: 100%;
@@ -9,15 +11,25 @@
   margin: auto; /* Centraliza no meio da página */
 }
 
+.sidebar h1 {
+color:#f9f9f9;
+font-family: ;
+}
+
 /* Conteúdo principal dentro da header */
 .header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto; /* Centraliza no meio da página */
 }
 
 /* Imagem dentro da header */
 .header img {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   align-items: center;
   width: 100%;
   max-width: 600px;
@@ -55,61 +67,67 @@
 
 /* Sidebar fixa à direita */
 .sidebar {
-  width: 250px; /* Largura padrão em telas grandes */
+  grid-column: 2 / 3;
+  grid-row: 1 / 10; /* Sidebar ocupa as duas linhas verticalmente */
   height: 100vh; /* Ocupa toda a altura da tela */
+  grid-template-columns: auto 250px; /* largura do conteúdo principal automática e sidebar fixa (250px) */
   background: #814256;
+  justify-content: start;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  position: fixed;
-  right: 0;
+  padding: 80px;
   top: 0;
-  border-radius: 2px 0 0 2px; /* Arredonda apenas o lado esquerdo */
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 2px  0 2px; /* Arredonda apenas o lado esquerdo */
   transition: width 0.3s ease-in-out; /* Suaviza a mudança de tamanho */
 }
 
 /* Ajuste para telas médias-grandes */
 @media (min-width: 1200px) {
   .sidebar {
-    width: 300px; /* Aumenta a largura em desktops grandes */
+    width: 400px; /* Aumenta a largura em desktops grandes */
+    padding: 150px; /* Ajusta o espaçamento */
   }
 }
 
 /* Ajuste para telas muito grandes */
 @media (min-width: 1600px) {
   .sidebar {
-    width: 500px; /* Aumenta ainda mais em telas ultra-wide */
+    width: 600px; /* Aumenta ainda mais em telas ultra-wide */
+    padding: 110px; /* Ajusta o espaçamento */
   }
 }
 
 /* Ajuste para telas extremamente grandes */
 @media (min-width: 1900px) {
   .sidebar {
-    width: 700px; /* Sidebar substancialmente maior */
+    width: 80%; /* Reduz ainda mais em dispositivos menores */
+    padding: 50px; /* Ajusta o espaçamento */
   }
 }
 
 /* Ajuste para tablets */
 @media (max-width: 1024px) {
   .sidebar {
-    width: 200px; /* Reduz a largura em tablets */
+    width: 80%; /* Reduz ainda mais em dispositivos menores */
+    padding: 50px; /* Ajusta o espaçamento */
   }
 }
 
 /* Ajuste para celulares médios */
 @media (max-width: 768px) {
   .sidebar {
-    width: 150px; /* Reduz ainda mais em dispositivos menores */
-    padding: 15px; /* Ajusta o espaçamento */
-    width: 80px; /* Aumenta ainda mais em telas ultra-wide */
-
+    width: 70%; /* Reduz ainda mais em dispositivos menores */
+    padding: 50px; /* Ajusta o espaçamento */
   }
 
   .sidebar a {
-    font-size: 13px; /* Diminui o tamanho da fonte dos links */
-    padding: 8px;
+    font-size: 19px; /* Diminui o tamanho da fonte dos links */
+  }
+
+  .sidebar p {
+    font-size: 8px; 
   }
 }
 
@@ -125,7 +143,7 @@
     padding: 3px;
   }
   .sidebar p {
-    font-size: 1px; 
+    font-size: 5px; 
   }
 }
 
@@ -147,7 +165,6 @@
 }
 
 .sidebar p {
-  font-size: 12px; /* Diminui ainda mais os links */
   padding: 6px;
   color: white;
 }
@@ -161,6 +178,10 @@
 
 
 body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "League Spartan", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -187,8 +208,14 @@ body {
 .container {
   justify-content: center;
   align-items: center;
-  width: 80%;
 }
+
+.container h1 {
+  font-optical-sizing: auto;
+  font-size: 40px;
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #814256;}
 
 svg {
   width: 100%;
@@ -249,21 +276,21 @@ path:hover {
 }
 
 .container-info {
-  display: flex ;
+  display: grid ;
   background: #f9f9f9;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 800px;
   border-radius: 8px;
-  padding: 20px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  box-shadow: 10px 2px 10px rgba(0, 0, 0, 0.1);
   max-height: 400px; /* Define um limite máximo de altura */
 }
 
 /* Grid para os Cards */
 .grid-container {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas (esquerda maior que direita) */
+    height: 100vh;                  /* Ocupa a altura total da janela */  
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px; /* Define o espaçamento entre os cards */
@@ -273,7 +300,6 @@ path:hover {
     }
 
 .card {
-  width: 33%;
   background: white;
   display: inline-block;
   border-radius: 10px;
