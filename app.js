@@ -91,7 +91,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         const especiesIgnoradas = [
                             "Babiana fragrans",
                             "Chasmanthe aethiopica",
-                            "Orthrosanthus chimboracensis"
+                            "Orthrosanthus chimboracensis",
+                            "Tigridia pavonia",
+                            "Iris germanica",
+                            "Dietes grandiflora",
+                            "Dietes bicolor",
+                            "Dietes grandiflora",
+                            "Dietes iridioides"
                           ];
 
                         const especiesLista = Object.values(especiesDict);
