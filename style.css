@@ -9,12 +9,13 @@
   width: 100%;
   max-width: 1200px;
   margin: auto; /* Centraliza no meio da página */
+  text-align: center;
 }
 
 .sidebar h1 {
 color:#f9f9f9;
-font-family: ;
 }
+
 
 /* Conteúdo principal dentro da header */
 .header-content {
@@ -28,8 +29,8 @@ font-family: ;
 
 /* Imagem dentro da header */
 .header img {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
   align-items: center;
   width: 100%;
   max-width: 600px;
@@ -62,22 +63,53 @@ font-family: ;
   margin-top: -3px;
 }
 
+.data-view h2 {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #814256;
+  margin: 5px 0 0;
+  letter-spacing: 6px;
+  margin-top: 10px;
+}
+.data-view p {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #814256;
+  margin: 5px 0 0;
+  letter-spacing: 6px;
+  margin-top: 10px;
+}
+.data-view {
+  grid-column: 3 / 3;
+  grid-row: 0 / 10; /* Sidebar ocupa as duas linhas verticalmente */
+  display: grid;
+  justify-content: flex-start;
+  padding: 10px;
+  border-radius: 8px;
+  color: #814256;
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100; /* Escolha entre 300, 400, 700, etc. */
+  font-style: normal;
+  flex-direction: column;
+}
+
 /* Importando a fonte Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 /* Sidebar fixa à direita */
 .sidebar {
-  grid-column: 2 / 3;
+  margin-top: -100px;
+  grid-column: 3 / 3;
   grid-row: 1 / 10; /* Sidebar ocupa as duas linhas verticalmente */
-  height: 100vh; /* Ocupa toda a altura da tela */
-  grid-template-columns: auto 250px; /* largura do conteúdo principal automática e sidebar fixa (250px) */
+  height: 80vh; /* Ajusta a altura da sidebar */
   background: #814256;
-  justify-content: start;
+  justify-content: flex-start;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px;
-  top: 0;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 2px  0 2px; /* Arredonda apenas o lado esquerdo */
   transition: width 0.3s ease-in-out; /* Suaviza a mudança de tamanho */
@@ -86,7 +118,7 @@ font-family: ;
 /* Ajuste para telas médias-grandes */
 @media (min-width: 1200px) {
   .sidebar {
-    width: 400px; /* Aumenta a largura em desktops grandes */
+    width: 350px; /* Aumenta a largura em desktops grandes */
     padding: 150px; /* Ajusta o espaçamento */
   }
 }
@@ -151,7 +183,7 @@ font-family: ;
 .sidebar a {
   font-family: "League Spartan", sans-serif;
   font-size: 17px;
-  font-weight: 400;
+  font-weight: 300;
   padding: 20px;
   color: white;
   text-decoration: none;
@@ -175,39 +207,55 @@ font-family: ;
   background: white;
   color: #814256;
 }
+.col-right .data-view {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: 100%;
+}
+
+
+.main {
+  display: content;
+  /* aqui definimos 2 colunas de mesma largura: */
+  grid-template-columns: 1fr 1fr;
+  /* espaço opcional entre colunas e linhas */
+  gap: 20px;
+}
 
 
 body {
-  height: 100%;
+  height: 10%; 
   margin: 0;
-  padding: 0;
   font-family: "League Spartan", sans-serif;
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr;
+  grid-template-rows: auto 1fr; /* Ajusta a altura da barra lateral */
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
 /* Importando a fonte do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;700&display=swap');
 
 
-.distribuicao {
-  align-items: center;
-  padding: 20px;
-  border-radius: 8px;
-  color: #814256;
-  font-family: "League Spartan", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400; /* Escolha entre 300, 400, 700, etc. */
-  font-style: normal;
+
+.main {
+  display: content;
+  /* aqui definimos 2 colunas de mesma largura: */
+  grid-template-columns: 1fr 1fr;
+  /* espaço opcional entre colunas e linhas */
+  gap: 20px;
 }
 
 
 .container {
+  display: grid;
   justify-content: center;
   align-items: center;
+  padding-top: 10dvh;
 }
 
 .container h1 {
@@ -218,6 +266,9 @@ body {
   color: #814256;}
 
 svg {
+  grid-column: 1 / 2;
+  grid-row: 2 / 2;
+  display: grid;
   width: 100%;
   max-width: 700px;
   margin-right: 100px;
@@ -276,7 +327,9 @@ path:hover {
 }
 
 .container-info {
-  display: grid ;
+  grid-column: 1 / 3;
+  grid-row: 3 / 10; /* Sidebar ocupa as duas linhas verticalmente */
+  display: flex ;
   background: #f9f9f9;
   flex-direction: column;
   align-items: center;
@@ -331,3 +384,4 @@ path:hover {
       border-radius: 15px; /* Adiciona bordas arredondadas */
   }
 }
+
