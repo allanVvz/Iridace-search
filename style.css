@@ -1,27 +1,26 @@
+/* Importando a fonte Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
 /* Barra lateral dentro da header */
 .header {
-  display: grid; /* Organiza os elementos horizontalmente */
-  flex-direction: column; /* Organiza os elementos horizontalmente */
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  align-items: center;
-  padding: 20px;
+  display: flex; /* Organiza os elementos horizontalmente */
+  padding: 0px;
   width: 100%;
-  max-width: 1200px;
-  margin: auto; /* Centraliza no meio da página */
+  margin-left: 0%;
   text-align: center;
+  align-items: center;
+  align-self: center;
 }
-
-.sidebar h1 {
-color:#f9f9f9;
-}
-
 
 /* Conteúdo principal dentro da header */
 .header-content {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  padding: 20px;
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  max-width: 1200px;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  margin-left: -100dvh;
   width: 100%;
   max-width: 1200px;
   margin: auto; /* Centraliza no meio da página */
@@ -46,6 +45,8 @@ color:#f9f9f9;
   font-optical-sizing: auto;
   font-weight: 700;
   font-size: 70px;
+  padding-top: 2dvh;
+
   color: #814256;
   margin: 0;
   letter-spacing: -4px;
@@ -63,50 +64,17 @@ color:#f9f9f9;
   margin-top: -3px;
 }
 
-.data-view h2 {
-  font-family: "League Spartan", sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  color: #814256;
-  margin: 5px 0 0;
-  letter-spacing: 6px;
-  margin-top: 10px;
-}
-.data-view p {
-  font-family: "League Spartan", sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  color: #814256;
-  margin: 5px 0 0;
-  letter-spacing: 6px;
-  margin-top: 10px;
-}
-.data-view {
-  grid-column: 3 / 3;
-  grid-row: 0 / 10; /* Sidebar ocupa as duas linhas verticalmente */
-  display: grid;
-  justify-content: flex-start;
-  padding: 10px;
-  border-radius: 8px;
-  color: #814256;
-  font-family: "League Spartan", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100; /* Escolha entre 300, 400, 700, etc. */
-  font-style: normal;
-  flex-direction: column;
-}
-
-/* Importando a fonte Montserrat */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 /* Sidebar fixa à direita */
 .sidebar {
   margin-top: -100px;
-  grid-column: 3 / 3;
-  grid-row: 1 / 10; /* Sidebar ocupa as duas linhas verticalmente */
-  height: 80vh; /* Ajusta a altura da sidebar */
+  grid-column: 3 / 3; 
+  grid-row: 1 / 10; /* Sidebar   ocupa as duas linhas verticalmente */
+  height: 120vh; /* Ajusta a altura da sidebar */
+  width: 60%; /* Largura padrão da sidebar */
+  max-width: 1500px;
   background: #814256;
-  justify-content: flex-start;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,59 +83,73 @@ color:#f9f9f9;
   transition: width 0.3s ease-in-out; /* Suaviza a mudança de tamanho */
 }
 
+.sidebar h1 {
+  color:#f9f9f9;
+  }
+  
 /* Ajuste para telas médias-grandes */
 @media (min-width: 1200px) {
   .sidebar {
-    width: 350px; /* Aumenta a largura em desktops grandes */
-    padding: 150px; /* Ajusta o espaçamento */
+    width: 120%; /* Aumenta a largura em desktops grandes */
+    padding: 10px; /* Ajusta o espaçamento */
+    height: 120vh; /* Ajusta a altura da sidebar */
+    padding-top: 40px; /* Ajusta o espaçamento */
+    width: 30%; /* Largura padrão da sidebar */
   }
 }
 
-/* Ajuste para telas muito grandes */
-@media (min-width: 1600px) {
-  .sidebar {
-    width: 600px; /* Aumenta ainda mais em telas ultra-wide */
-    padding: 110px; /* Ajusta o espaçamento */
-  }
-}
-
-/* Ajuste para telas extremamente grandes */
-@media (min-width: 1900px) {
-  .sidebar {
-    width: 80%; /* Reduz ainda mais em dispositivos menores */
-    padding: 50px; /* Ajusta o espaçamento */
-  }
-}
 
 /* Ajuste para tablets */
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .sidebar {
-    width: 80%; /* Reduz ainda mais em dispositivos menores */
-    padding: 50px; /* Ajusta o espaçamento */
+    width: 120%; /* Aumenta a largura em desktops grandes */
+    padding: 10px; /* Ajusta o espaçamento */
+    height: 150vh; /* Ajusta a altura da sidebar */
+    padding-top: 40px; /* Ajusta o espaçamento */
   }
 }
 
 /* Ajuste para celulares médios */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .sidebar {
-    width: 70%; /* Reduz ainda mais em dispositivos menores */
-    padding: 50px; /* Ajusta o espaçamento */
+    width: 100%; /* Aumenta a largura  */
+    padding: 10px; /* Ajusta o espaçamento */
+    height: 70vh; /* Ajusta a altura da sidebar */
+    padding-top: 30dvh; /* Ajusta o espaçamento */
+    padding-right: 5dvh;
+    padding-bottom: 10dvh;
   }
 
   .sidebar a {
-    font-size: 19px; /* Diminui o tamanho da fonte dos links */
+    font-size: 5px; /* Diminui o tamanho da fonte dos links */
   }
 
   .sidebar p {
-    font-size: 8px; 
+    font-size: 4px; 
+  }
+
+  
+.header img {
+  align-items: right;
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   }
 }
 
 /* Ajuste para celulares muito pequenos */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .sidebar {
-    width: 120px; /* Sidebar bem estreita para telas muito pequenas */
-    padding: 10px;
+    display: flex;
+    width: 40%; /* Aumenta a largura  */
+    padding: 10px; /* Ajusta o espaçamento */
+    height: 70vh; /* Ajusta a altura da sidebar */
+    padding-top: 40px; /* Ajusta o espaçamento */
+    padding-right: 6dvh;
   }
 
   .sidebar a {
@@ -176,6 +158,59 @@ color:#f9f9f9;
   }
   .sidebar p {
     font-size: 5px; 
+  }
+
+  .header img {
+    align-items: left;
+    width: 60%;
+    max-width: 300px;
+    margin-top: 30px;
+    margin-left: 8dvh;
+    margin-right: 10dvh;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+  .header {
+    display: flex;
+  }
+
+  .header h1 {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 50px;
+    padding-top: 2dvh;
+    color: #814256;
+    margin-left: 5dvh;
+    letter-spacing: -4px;
+    margin-bottom: -5px;
+  }
+  .header h2 {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #814256;
+    margin: 5px 0 0;
+    letter-spacing: 6px;
+    margin-top: -3px;
+  }
+
+  .sidebar a {
+    font-family: "League Spartan", sans-serif;
+    font-size: 9px;
+    font-weight: 250;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px; /* Espaçamento entre as letras */
+    margin-top: 5px;
+    margin-bottom: 4px;
+    transition: background 0.3s, color 0.3s;
   }
 }
 
@@ -207,22 +242,103 @@ color:#f9f9f9;
   background: white;
   color: #814256;
 }
+
+
+
+
+
+
+
+.data-view h2 {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #814256;
+  margin: 5px 0 0;
+  letter-spacing: 6px;
+  margin-top: 10px;
+}
+.data-view p {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #814256;
+  margin: 5px 0 0;
+  letter-spacing: 6px;
+  margin-top: 10px;
+}
+.data-view {
+  display: grid;
+  padding: 180px;
+  padding-left: 50dvh;
+  border-radius: 10px;
+  color: #814256;
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 70%; /* Escolha entre 300, 400, 700, etc. */
+  font-style: normal;
+  flex-direction: column;
+  scale: 1.10;
+}
 .col-right .data-view {
+  scale: 0.70;
   background: #fff;
-  padding: 1rem;
+  padding: 5dvh;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  height: 100%;
 }
 
+@media (max-width: 768px) {
+  .map {
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    margin-left: 10dvh;
+    margin-right: 10dvh;
+    text-align: center;
 
-.main {
-  display: content;
-  /* aqui definimos 2 colunas de mesma largura: */
-  grid-template-columns: 1fr 1fr;
-  /* espaço opcional entre colunas e linhas */
-  gap: 20px;
+  } 
+  
+.data-view {
+  display: grid;
+  padding: 50px;
+  padding-left: 15dvh;
+  padding-right: 15dvh;
+  border-radius: 10px;
+  color: #814256;
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 90%; /* Escolha entre 300, 400, 700, etc. */
+  font-style: normal;
+  flex-direction: column;
+  scale: 1;
 }
+.col-right .data-view {
+  scale: 0.30;
+  background: #fff;
+  padding: 5dvh;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+}
+@media (min-width: 768px) {
+  .map {
+
+    border-right: 15dvh;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: grid;
+    width: 100%;
+    max-width: 800px;
+    margin-right: 40dvh;
+    align-items: center;
+    text-align: center;
+    margin-left: 10dvh;
+  } 
+}
+
 
 
 body {
@@ -231,7 +347,6 @@ body {
   font-family: "League Spartan", sans-serif;
   display: grid;
   grid-template-columns: 2fr;
-  grid-template-rows: auto 1fr; /* Ajusta a altura da barra lateral */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -331,16 +446,19 @@ path:hover {
   grid-row: 3 / 10; /* Sidebar ocupa as duas linhas verticalmente */
   display: flex ;
   background: #f9f9f9;
+  padding-left: 30dvh;
   flex-direction: column;
   align-items: center;
   border-radius: 8px;
   padding: 50px;
   box-shadow: 10px 2px 10px rgba(0, 0, 0, 0.1);
   max-height: 400px; /* Define um limite máximo de altura */
+
 }
 
 /* Grid para os Cards */
 .grid-container {
+  
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 colunas (esquerda maior que direita) */
     height: 100vh;                  /* Ocupa a altura total da janela */  

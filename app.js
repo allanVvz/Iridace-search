@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             "Dietes grandiflora",
                             "Dietes bicolor",
                             "Dietes grandiflora",
-                            "Dietes iridioides"
+                            "Dietes iridioides" 
                           ];
 
                         const especiesLista = Object.values(especiesDict);
